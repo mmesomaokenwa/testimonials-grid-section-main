@@ -15,9 +15,11 @@
 body {
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-size: .8125rem;
+    line-height: 1.4;
     background-color: var(--light-grayish-blue);
     color: var(--white);
 }
+
 
 *,
 *::after,
@@ -27,30 +29,14 @@ body {
     box-sizing: border-box;
 }
 
-main {
-    display: grid;
-    place-items: center;
-}
 
-.container {
-    padding-inline: 1rem;
-    padding-block: 3rem;
-}
-
-.testimonials {
-    display: grid;
-    gap: 1rem;
-}
-
-.card {
-    display: grid;
-    gap: 1rem;
-    padding: 1rem;
-    border-radius: 10px;
-}
+/* typograhy */
 
 .daniel {
     background-color: var(--moderate-violet);
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
 }
 
 .jonathan {
@@ -66,6 +52,49 @@ main {
     background-color: var(--very-dark-blackish-blue);
 }
 
+.name {
+    font-weight: var(--fw-bold);
+}
+
+.verified {
+    opacity: 50%;
+}
+
+.review {
+    opacity: 70%;
+}
+
+.description {
+    font-size: 1.2rem;
+    font-weight: var(--fw-bold);
+}
+
+
+/* layout */
+
+main {
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    padding-inline: 1rem;
+    padding-block: 3rem;
+    max-width: 1000px;
+}
+
+.testimonials {
+    display: grid;
+    gap: 1rem; 
+}
+
+.card {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
 .profile {
     display: flex;
     align-items: center;
@@ -75,5 +104,35 @@ main {
         width: 40px;
         aspect-ratio: 1;
         border-radius: 50%;
+    }
+}
+
+
+@media (min-width: 650px) {
+    .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .daniel {
+        grid-row: span 2;
+    }
+}
+
+@media (min-width: 960px) {
+    .testimonials{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .daniel {
+        grid-row: span 1;
+        grid-column: span 2;
+    }
+
+    .similar:last-child {
+        grid-area: 1 / 4 / span 2 / 5;
+    }
+
+    .patrick {
+        grid-column: span 2;
     }
 }
