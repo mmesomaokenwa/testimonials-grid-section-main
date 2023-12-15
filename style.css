@@ -36,7 +36,7 @@ body {
     background-color: var(--moderate-violet);
     background-image: url(images/bg-pattern-quotation.svg);
     background-repeat: no-repeat;
-    background-position: top right;
+    background-position: 85% 0;
 }
 
 .jonathan {
@@ -79,20 +79,21 @@ main {
 
 .container {
     padding-inline: 1rem;
-    padding-block: 3rem;
-    max-width: 1000px;
+    padding-block: 4rem;
+    max-width: 1100px;
 }
 
 .testimonials {
     display: grid;
-    gap: 1rem; 
+    gap: 1.5rem; 
 }
 
 .card {
     display: grid;
-    gap: 1.5rem;
+    gap: 1rem;
     padding: 1.5rem;
     border-radius: 10px;
+    box-shadow: 0 0 20px var(--light-gray);
 }
 
 .profile {
